@@ -15,11 +15,20 @@
 """
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+  age = int(input())
+  ocp = occupation(age)
+  print(ocp)
+
+def occupation(ag):
+   if ag < 7:
+     return "detsad"
+   elif ag < 17:
+     return "school"
+   elif ag < 21:
+     return "university"
+   else:
+     return "work"
+  
 
 if __name__ == "__main__":
     main()
