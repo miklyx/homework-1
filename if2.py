@@ -1,3 +1,5 @@
+import sys
+
 """
 
 Домашнее задание №1
@@ -20,7 +22,22 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
-    
+    print(cmpr())
+
+def cmpr():
+   str1 = input()
+   str2 = input()
+   print(type(str1))
+   if (not isinstance(str1, str)) or (not isinstance(str2, str)):
+     return 0
+   elif str1 == str2:
+     return 1
+   elif len(str1)>len(str2):
+     return 2
+   elif str1!=str2 and str2 == 'learn':
+     return 3
+   else:
+     return []
+
 if __name__ == "__main__":
     main()
