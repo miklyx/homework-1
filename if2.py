@@ -15,6 +15,9 @@ import sys
 * Вызвать функцию несколько раз, передавая ей разные праметры 
   и выводя на экран результаты
 
+************** DONE ********************
+
+
 """
 
 def main():
@@ -25,9 +28,9 @@ def main():
     print(cmpr())
 
 def cmpr():
-   str1 = input()
-   str2 = input()
-   print(type(str1))
+   str1 = input("First string: ")
+   str2 = input("Second string: ")
+   
    if (not isinstance(str1, str)) or (not isinstance(str2, str)):
      return 0
    elif str1 == str2:
@@ -37,7 +40,7 @@ def cmpr():
    elif str1!=str2 and str2 == 'learn':
      return 3
    else:
-     return []
+     return ""
 
 if __name__ == "__main__":
     main()

@@ -10,13 +10,18 @@
 * Оба аргумента нужно приводить к целому числу при помощи int() и 
   перехватывать исключение ValueError если приведение типов не сработало
     
+******************   DONE  ******************************
+
+
 """
 
 def get_summ(num_one, num_two):
-    """
-    Замените pass на ваш код
-    """
-    pass
+    try:
+      return(int(num_one)+int(num_two))
+    except ValueError:
+      s = "Приведение типов не сработало"
+      return s
+
     
 if __name__ == "__main__":
     print(get_summ(2, 2))

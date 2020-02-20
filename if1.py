@@ -12,10 +12,13 @@
   работы функции в переменную
 * Вывести содержимое переменной на экран
 
+****************  DONE   ***************************
+
+
 """
 
 def main():
-  age = int(input())
+  age = int(input("Input age: "))
   ocp = occupation(age)
   print(ocp)
 
