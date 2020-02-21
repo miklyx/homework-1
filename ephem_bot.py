@@ -14,6 +14,8 @@
 """
 import logging
 import ephem
+from ephem import *
+from datetime import date
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
@@ -44,10 +46,35 @@ def talk_to_me(bot, update):
     update.message.reply_text(user_text)
 
 def planet_talk(bot, update):
+    # Вот здесь что-то
+    
     pl = update.message.text.split()
-    pl_name = pl[1]
-    stars=pl_name.constellation
-    update.message.reply_text(stars)
+    planet = pl[1]
+    #
+    
+    time = date.today()
+    if planet == 'Venus':
+      stars=constellation(Venus(time))
+    if planet == 'Mars':
+      stars=constellation(Mars(time))
+    if planet == 'Jupiter':
+      stars=constellation(Jupiter(time))
+    if planet == 'Saturn':
+      stars=constellation(Saturn(time))
+    if planet == 'Uranus':
+      stars=constellation(Uranus(time))
+    if planet == 'Neptune':
+      stars=constellation(Neptune(time))
+    if planet == 'Pluto':
+      stars=constellation(Pluto(time))
+    if planet == 'Sun':
+      stars=constellation(Sun(time))
+    if planet == 'Moon':
+      stars=constellation(Moon(time))
+    if planet == 'Mercury':
+      stars=constellation(Mercury(time))
+    
+    update.message.reply_text(stars[1])
 
 def main():
     mybot = Updater("1007684944:AAHyQ5_tF2_qer8lWGyWytHILaAOf5uYT_8", request_kwargs=PROXY)
