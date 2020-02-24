@@ -25,6 +25,7 @@ def ask_user():
         print("Пока!")
         break
 def ask_user_dict(voc,st):
+  # здесь лучше использовать функцию, которую я описала в файле while2
   for i in voc.keys():
     if i == st:
       return voc.get(i)

@@ -19,7 +19,7 @@ import sys
 
 
 """
-
+#функция которая просто вызывает другую функцию - избыточна. можно оставить только фкц cmpr
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
@@ -27,10 +27,8 @@ def main():
     """
     print(cmpr())
 
-def cmpr():
-   str1 = input("First string: ")
-   str2 = input("Second string: ")
-   
+# принимает на вход две строки: лучше подавать в качетсве входных параметров 
+def cmpr(str1,  str2):
    if (not isinstance(str1, str)) or (not isinstance(str2, str)):
      return 0
    elif str1 == str2:
@@ -43,4 +41,8 @@ def cmpr():
      return ""
 
 if __name__ == "__main__":
-    main()
+  # Вызвать функцию несколько раз, передавая ей разные праметры 
+    print(cmpr('1','2'))
+    print(cmpr('1','1'))
+    print(cmpr('1','lessom'))
+  

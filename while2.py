@@ -22,13 +22,20 @@ def ask_user():
   while s != "exit":
     s = input("Введите вопрос (exit - выход): ")
     print(ask_user_dict(vocab,s))
+
 def ask_user_dict(voc,st):
   for i in voc.keys():
     if i == st:
       return voc.get(i)
     else:
+      #  почему бы здесь сразу не делать return "Вопрос отсутствует в словаре!"? 
       k = "Вопрос отсутствует в словаре!"
   if k:
     return k
+
+  # вышенаписанную функциию можно было написать проще след образом:
+  # def ask_user_dict(voc,st):
+  #   return voc.get(st, "Вопрос отсутствует в словаре!")
+  
 if __name__ == "__main__":
     ask_user()

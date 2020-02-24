@@ -25,8 +25,10 @@ def voclist():
   school = [{'school_class': '4a', 'scores': [3,4,2,5,2]},{'school_class': '4b', 'scores': [5,4,4,5,2]},{'school_class': '4c', 'scores': [2,3,2,1,2]}]
   return school
 
+# переделай данную функцию с использованием функций, которые я прописала в функции midclasses
 def midschool(lst):
   cnt=0
+  #переменные не называют уже зарезервированными словами sum можно заменить на summa
   sum=0
   for i in lst:
     sc=i["scores"]
@@ -36,17 +38,18 @@ def midschool(lst):
   return round(sum/cnt,2) 
 
 def midclasses(lst):
-  cntc=0
-  sumc=0
+  # cntc=0
+  # sumc=0
   lst2=[]
   for i in lst:
     scc=i["scores"]
-    for j in scc: 
-      cntc = cntc + 1
-      sumc = sumc + j
-    i["midscore"]=round(sumc/cntc,2)
-    cntc=0
-    sumc=0
+    # for j in scc: 
+    #   cntc = cntc + 1
+    #   sumc = sumc + j
+    # i["midscore"]=round(sumc/cntc,2)
+    i['midscore'] = sum(scc)/len(scc)
+    # cntc=0
+    # sumc=0
     lst2.append(i)
   return(lst2)
 
